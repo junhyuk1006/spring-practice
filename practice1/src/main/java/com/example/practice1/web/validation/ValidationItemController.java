@@ -28,7 +28,8 @@ public class ValidationItemController {
     }
 
     @GetMapping("/add")
-    public String addForm(){
+    public String addForm(Model model){
+        model.addAttribute("item",new Item());
         return "validation/addForm";
     }
 
