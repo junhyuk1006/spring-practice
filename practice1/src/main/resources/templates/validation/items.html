@@ -35,17 +35,11 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td><a href="item.html">1</a></td>
-                <td><a href="item.html">테스트 상품1</a></td>
-                <td>10000</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td><a href="item.html">2</a></td>
-                <td><a href="item.html">테스트 상품2</a></td>
-                <td>20000</td>
-                <td>20</td>
+            <tr th:each="item:${items}">
+                <td><a href="item.html" th:href="@{/validation/items/{itemId}(itemId=${item.id})}" th:text="${item.id}">1</a></td>
+                <td><a href="item.html" th:href="@{/validation/items/{itemId}(itemId=${item.id})}" th:text="${item.itemName}">테스트 상품1</a></td>
+                <td th:text="${item.price}">10000</td>
+                <td th:text="${item.quantity}">10</td>
             </tr>
             </tbody>
         </table>
